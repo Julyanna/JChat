@@ -37,9 +37,11 @@ public class Server {
 
     public void subscribe(ClientHandler clientHandler){
         clients.add(clientHandler);
+        broadcastClientsList();
     }
     public void unsubscribe(ClientHandler clientHandler){
         clients.remove(clientHandler);
+        broadcastClientsList();
     }
 
     public boolean isNickBusy(String nick){
@@ -58,19 +60,6 @@ public class Server {
     }
 
     public void sendPrivateMsg(ClientHandler from, String nickTo, String msg){
-//        String[] data = msg.split("\\s");
-//        String textmMsg = null;
-//        int index = 0;
-//        for (String s: data){
-//            index++;
-//            if (index != 1 && index != 2){
-//                if (textmMsg == null) {
-//                    textmMsg = s;
-//                } else {
-//                    textmMsg = textmMsg + " " + s;
-//                }
-//            }
-//        }
         for (ClientHandler o: clients) {
             if (o.getNick().equals(nickTo)){
                 o.sendMsg("от " + from.getNick() + ": " + msg);
@@ -79,6 +68,17 @@ public class Server {
             }
         }
         from.sendMsg("Клиент с ником " + nickTo + " не найден");
+    }
+
+    public void broadcastClientsList(){
+        StringBuilder sb = new StringBuilder("/clientslist ");
+        for (ClientHandler o: clients) {
+            sb.append(o.getNick() + " ");
+        }
+        String out = sb.toString();
+        for (ClientHandler o: clients){
+            o.sendMsg(out);
+        }
     }
 
 

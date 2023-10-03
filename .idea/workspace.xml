@@ -6,10 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="76e51035-9a25-4ba6-bee2-05e699b8ab15" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JChat/ru/jchat/core/server/ClientHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JChat/ru/jchat/core/server/ClientHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JChat/ru/jchat/core/server/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JChat/ru/jchat/core/server/Server.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JChat/ru/jchat/core/client/Controller$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JChat/ru/jchat/core/client/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JChat/ru/jchat/core/client/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JChat/ru/jchat/core/client/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JChat/ru/jchat/core/client/sample.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/jchat/core/client/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/jchat/core/client/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/jchat/core/client/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/jchat/core/client/sample.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ru/jchat/core/server/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/jchat/core/server/ClientHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/jchat/core/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/jchat/core/server/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,22 +213,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "D:/Курсы обучения/GeekBrains/GitHub/JChat",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Курсы обучения/GeekBrains/GitHub/JChat&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="ru.jchat.core.client" />
@@ -408,6 +410,22 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="JChat pre-version alpha" />
     <option name="LAST_COMMIT_MESSAGE" value="JChat pre-version alpha" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ru/jchat/core/client/Controller.java</url>
+          <line>118</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ru/jchat/core/client/Controller.java</url>
+          <line>80</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
