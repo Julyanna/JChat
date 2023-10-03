@@ -6,11 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="76e51035-9a25-4ba6-bee2-05e699b8ab15" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JChat/ru/jchat/core/client/Controller$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JChat/ru/jchat/core/client/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JChat/ru/jchat/core/client/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JChat/ru/jchat/core/client/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JChat/ru/jchat/core/client/sample.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ru/jchat/core/client/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/jchat/core/client/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/jchat/core/client/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/jchat/core/client/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ru/jchat/core/client/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/jchat/core/client/sample.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ru/jchat/core/server/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/jchat/core/server/ClientHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/jchat/core/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/jchat/core/server/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -409,6 +410,22 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="JChat pre-version alpha" />
     <option name="LAST_COMMIT_MESSAGE" value="JChat pre-version alpha" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ru/jchat/core/client/Controller.java</url>
+          <line>118</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ru/jchat/core/client/Controller.java</url>
+          <line>80</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
