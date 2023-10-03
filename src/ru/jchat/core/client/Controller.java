@@ -1,11 +1,11 @@
 package ru.jchat.core.client;
 
+import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 
 import java.io.DataInputStream;
@@ -28,7 +28,8 @@ public class Controller implements Initializable{
     TextField loginField;
     @FXML
     PasswordField passField;
-
+    @FXML
+    ListView<String> clientsListView;
 
     private Socket socket;
     private DataOutputStream out;
@@ -39,6 +40,8 @@ public class Controller implements Initializable{
 
     private boolean authorized;
 
+    private ObservableList<String> clientsList;
+
     public void setAuthorized(boolean authorized) {
         this.authorized = authorized;
         if (authorized){
@@ -46,12 +49,16 @@ public class Controller implements Initializable{
             msgPanel.setManaged(true);
             authPanel.setVisible(false);
             authPanel.setManaged(false);
+            clientsListView.setVisible(true);
+            clientsListView.setManaged(true);
         }
         else {
             msgPanel.setVisible(false);
             msgPanel.setManaged(false);
             authPanel.setVisible(true);
             authPanel.setManaged(true);
+            clientsListView.setVisible(false);
+            clientsListView.setManaged(false);
         }
     }
 
@@ -64,6 +71,8 @@ public class Controller implements Initializable{
             socket = new Socket(SERVER_IP, SERVER_PORT);
             in = new DataInputStream(socket.getInputStream());
             out = new DataOutputStream(socket.getOutputStream());
+            clientsList = FXCollections.observableArrayList();
+            clientsListView.setItems(clientsList);
             Thread t = new Thread(() -> {
                 try {
                     while(true){
@@ -76,6 +85,18 @@ public class Controller implements Initializable{
                     }
                     while (true) {
                         String s = in.readUTF();
+                        if (s.startsWith("/")){
+                            if (s.startsWith("/clientslist ")){
+                                String[] data = s.split("\\s");
+                                Platform.runLater(() -> {
+                                    clientsList.clear();
+                                    for (int i = 1; i < data.length; i++) {
+                                        clientsList.addAll(data[i]);
+                                    }
+                                });
+
+                            }
+                        }
                         textArea.appendText(s + "\n");
                     }
                 } catch (IOException e) {
@@ -99,6 +120,10 @@ public class Controller implements Initializable{
     }
 
     public void sendAuthMsg(){
+        if (loginField.getText().isEmpty() || passField.getText().isEmpty()){
+            showAlert("Указаны неполные данные авторизации");
+            return;
+        }
         if (socket == null || socket.isClosed()) {
             connect();
         }
