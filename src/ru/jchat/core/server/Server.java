@@ -57,26 +57,28 @@ public class Server {
         }
     }
 
-    public void sendMsgToNick(String nick, String msg){
-        String[] data = msg.split("\\s");
-        String textmMsg = null;
-        int index = 0;
-        for (String s: data){
-            index++;
-            if (index != 1 && index != 2){
-                if (textmMsg == null) {
-                    textmMsg = s;
-                } else {
-                    textmMsg = textmMsg + " " + s;
-                }
-            }
-        }
+    public void sendPrivateMsg(ClientHandler from, String nickTo, String msg){
+//        String[] data = msg.split("\\s");
+//        String textmMsg = null;
+//        int index = 0;
+//        for (String s: data){
+//            index++;
+//            if (index != 1 && index != 2){
+//                if (textmMsg == null) {
+//                    textmMsg = s;
+//                } else {
+//                    textmMsg = textmMsg + " " + s;
+//                }
+//            }
+//        }
         for (ClientHandler o: clients) {
-            if (o.getNick().equals(data[1])){
-                o.sendMsg(nick + ": " + textmMsg);
-                break;
+            if (o.getNick().equals(nickTo)){
+                o.sendMsg("от " + from.getNick() + ": " + msg);
+                from.sendMsg("клиенту " + nickTo + ": " + msg);
+                return;
             }
         }
+        from.sendMsg("Клиент с ником " + nickTo + " не найден");
     }
 
 
