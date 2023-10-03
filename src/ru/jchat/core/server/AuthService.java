@@ -4,18 +4,20 @@ import java.sql.*;
 
 public class AuthService {
     private Connection connection;
-    private Statement stmt;
+    private PreparedStatement psFindNick;
 
 
     public void connect() throws ClassNotFoundException, SQLException {
         Class.forName("org.sqlite.JDBC");
         connection = DriverManager.getConnection("jdbc:sqlite:main.db");
-        stmt = connection.createStatement();
+        psFindNick = connection.prepareStatement("SELECT nick FROM users WHERE login = ? AND password = ?;")
     }
 
     public String getNickByLoginAndPass(String login, String pass) {
         try {
-            ResultSet rs = stmt.executeQuery("SELECT nick FROM users WHERE login = '" + login + "' AND password = '" + pass + "';");
+            psFindNick.setString(1, login);
+            psFindNick.setString(2, pass);
+            ResultSet rs = psFindNick.executeQuery();
             if (rs.next()){
                 return rs.getString("nick");
             }
